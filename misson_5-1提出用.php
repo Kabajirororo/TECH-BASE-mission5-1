@@ -31,7 +31,7 @@
 //編集番号が指定済みなら以下の処理を実行
 if(!empty($_POST["editnum"])){
     //入力フォームに文字があるとき下記の処理を実行  
-    if(!empty($_POST["name"]) || !empty($_POST["comment"]) || !empty($_POST["pass"])){
+    if(!empty($_POST["name"]) && !empty($_POST["comment"]) && !empty($_POST["pass"])){
         //指定した編集番号を代入
         $id      = $_POST["editnum"];
         //入力された文字を変数に代入
@@ -54,7 +54,7 @@ if(!empty($_POST["editnum"])){
 }
 //新規投稿機能
 //入力フォームに文字があるとき下記の処理を実行  
-elseif(!empty($_POST["name"]) || !empty($_POST["comment"]) || !empty($_POST["pass"])){
+elseif(!empty($_POST["name"]) && !empty($_POST["comment"]) && !empty($_POST["pass"])){
     //入力された文字を変数に代入
     $name = $_POST["name"];
     $comment = $_POST["comment"]; 
@@ -71,7 +71,7 @@ elseif(!empty($_POST["name"]) || !empty($_POST["comment"]) || !empty($_POST["pas
     
 }
 //削除フォームに文字があるとき以下の処理を実行
-elseif(!empty($_POST["del"]) || !empty($_POST["pass_del"])){
+elseif(!empty($_POST["del"]) && !empty($_POST["pass_del"])){
     //$delidに削除番号を代入
     $delid = $_POST["del"];
     //$delpassにパスワードを代入
@@ -86,7 +86,7 @@ elseif(!empty($_POST["del"]) || !empty($_POST["pass_del"])){
 }
 //編集選択機能
 //編集フォームに文字があるとき以下の処理を実行
-elseif(!empty($_POST["edit"]) || !empty($_POST["pass_edt"])){
+elseif(!empty($_POST["edit"]) && !empty($_POST["pass_edt"])){
     //$edtidに削除番号を代入
     $edtid   = $_POST["edit"];
     //$delpassにパスワードを代入
